@@ -3,8 +3,8 @@ import './App.scss'
 import Quote from "./components/Quote"
 import TweetQuote from './components/Tweet';
 import GetNewQuote from './components/GetNewQuote';
-function App() {
 
+function App() {
   const [author, setAuthor] = useState("author")
   const [quoteText, setQuoteText] = useState("quote text ")
   const quoteURL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
@@ -32,21 +32,25 @@ function App() {
         let randomQuote = quotesList[Math.floor(Math.random() * 102)]
         setAuthor(randomQuote.author)
         setQuoteText(randomQuote.quote)
-
       })
     let randomColor = colors[Math.floor(Math.random() * colors.length)]
-    console.log(randomColor);
     document.getElementsByTagName("BODY")[0].style.backgroundColor = randomColor
     document.getElementById("quote-box").style.color = randomColor
+    document.getElementById("new-quote").style.backgroundColor = randomColor
+    document.getElementById("tweet-quote").style.color = randomColor
+
   }
-  useEffect(getQuote, [])
+  useEffect(()=>{
+    getQuote()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+  
   return (
     <div id="quote-box" >
       <Quote quoteText={quoteText} author={author} />
       <TweetQuote tweetURL={tweetURL} />
       <GetNewQuote getQuote={getQuote} />
     </div>
-    //  author={author} quoteText={text} 
   );
 }
 
