@@ -40,11 +40,11 @@ function App() {
     document.getElementById("tweet-quote").style.color = randomColor
 
   }
-  useEffect(()=>{
+  useEffect(() => {
     getQuote()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-  
+  }, [])
+
   return (
     <div id="quote-box" >
       <Quote quoteText={quoteText} author={author} />

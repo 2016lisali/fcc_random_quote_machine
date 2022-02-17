@@ -1,5 +1,5 @@
 
-const Quote = ({quoteText, author}) => {
+const Quote = ({ quoteText, author }) => {
 
   return (
     <>
@@ -7,5 +7,5 @@ const Quote = ({quoteText, author}) => {
       <p id="author"> - {author}</p>
     </>
   )
-  }
+}
 export default Quote;

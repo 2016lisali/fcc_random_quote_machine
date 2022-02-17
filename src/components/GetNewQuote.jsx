@@ -1,10 +1,10 @@
 
 const GetNewQuote = (props) => {
-  return ( 
+  return (
     <>
-      <button id="new-quote" onClick= {props.getQuote} >New Quote</button>
+      <button id="new-quote" onClick={props.getQuote} >New Quote</button>
     </>
   );
 }
- 
+
 export default GetNewQuote;
